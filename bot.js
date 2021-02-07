@@ -1,5 +1,5 @@
 //#region Imports
-const { prefix, token, id, secret, key, config_id, script_id } = require('./config.json');
+const { prefix, token, id, secret, key, config_id, script_id, script_register_channel, config_register_channel } = require('./config.json');
 //#endregion
 
 //#region Dependencies
@@ -130,6 +130,10 @@ client.on('message', message => {
 		message.channel.send('Pong.');
     }
     else if (command === 'sreg' || command === 'sregister') { // Script registration
+        if (message.channel.name != script_register_channel) {
+            return message.channel.send(`You can not do that command here, ${message.author}`);;
+        }
+
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }
@@ -151,6 +155,10 @@ client.on('message', message => {
         message.channel.send(`Successfully sent UID **${user_id.toString()}** a script subscription!`);
     }
     else if (command === 'creg' || command === 'cregister') { // Config registration
+        if (message.channel.name != config_register_channel) {
+            return message.channel.send(`You can not do that command here, ${message.author}`);;
+        }
+
         if (!args.length) {
             return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
         }

@@ -3,8 +3,11 @@
 	"secret": "",
 	"key": "",
 
-	"config_id": 69,
-	"script_id": 420,
+	"config_id": 0,
+	"script_id": 0,
+
+	"script_register_channel": "",
+	"config_register_channel": "channel",
 
 	"prefix": "!",
 	"token": ""
