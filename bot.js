@@ -5,6 +5,7 @@ const { prefix, token, id, secret, key, config_id, script_id, script_register_ch
 //#region Dependencies
 const https = require("https");
 const querystring = require("querystring");
+const Discord = require('discord.js');
 //#endregion
 
 //#region generate_options
@@ -113,7 +114,6 @@ function add_config_subscription(config_id, user_id) {
 //#endregion
 
 //#region Bot
-const Discord = require('discord.js');
 const client = new Discord.Client();
 
 client.once('ready', () => {
